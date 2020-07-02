@@ -1,5 +1,6 @@
 try{ 
-var newText = document.querySelector("label[for='option-4195']");  if(newText != null){
+var newText = document.querySelector("label[for='option-4195']");  
+    if(newText != null){
     newText.innerHTML = "Custom Text";
   }  newText.addEventListener("mouseenter", function( event ) { 
     var hoverText = document.getElementsByClassName("pdp-tooltip__label")[0];
