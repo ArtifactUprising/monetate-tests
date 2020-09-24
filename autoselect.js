@@ -2,7 +2,7 @@
 	try {
 	    var option = document.getElementById("option-6959");
 	    var formField = false;
-	    if (option.parentNode && option.parentNode.parentNode) {
+	    if (option != undefined && option.parentNode && option.parentNode.parentNode) {
 	    	formField = option.parentNode.parentNode;
 	    }
 	    function albumSize() {
