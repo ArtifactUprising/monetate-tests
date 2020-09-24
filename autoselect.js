@@ -9,7 +9,7 @@
 			option.click();
 	    }
 	    if (option && formField) {
-	        albumSize();
+	        option.click();
 	    }
 	} catch (e) {
 	    console.log(e);
