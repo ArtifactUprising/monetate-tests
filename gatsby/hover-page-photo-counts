@@ -1,0 +1,55 @@
+/* this is Nick's safety first function to help style elements across functions */
+
+function styleSafelyById2(elementId, styleProp, styleValue) {
+  try{
+    const e = document.getElementById(elementId);
+    if (e && e.style) {
+      e.style[styleProp] = styleValue;
+    }
+  }
+  catch(e){
+    console.log(e);
+  }
+}
+
+function pageCountHover() {
+  try{
+    var deviceWidth  = window.innerWidth;
+    if(deviceWidth > 1023)
+    {
+      styleSafelyById2('HoverPageCount', 'display', 'flex');
+    }
+  }
+  catch(e){
+    console.log(e);
+  }
+}
+
+function pageCountHoverLeave() {
+  try{
+    var deviceWidth  = window.innerWidth;
+    if(deviceWidth > 1023)
+    {
+      styleSafelyById2('HoverPageCount', 'display', 'none');
+    }
+  }
+  catch(e){
+    console.log(e);
+  }
+}
+
+function mobileTap() {
+  try{
+    var deviceWidth  = window.innerWidth;
+    if(deviceWidth < 1024)
+    {
+      styleSafelyById2('mobilePageCount', 'display', 'flex');
+      styleSafelyById2('mobilePageCount100', 'display', 'none');
+      styleSafelyById2('mobilePageCount150', 'display', 'none');
+
+    }
+  }
+  catch(e){
+    console.log(e);
+  }
+}
