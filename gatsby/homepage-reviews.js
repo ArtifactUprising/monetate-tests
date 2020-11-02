@@ -58,95 +58,97 @@ var review = [
 
 
 //these are the html divs vars for box1
-var box1Link = document.getElementById("box1");
-var box1ProductImage = document.getElementById("box1Img");
-var box1ProductName = document.getElementById("box1Title");
-var box1Stars = document.getElementById("box1Stars");
-var box1Review = document.getElementById("box1Review");
-var rei1 = document.getElementById("ri1");
-var rei2 = document.getElementById("ri2");
-var rei3 = document.getElementById("ri3");
-var rei4 = document.getElementById("ri4");
-var rei5 = document.getElementById("ri5");
-var rei6 = document.getElementById("ri6");
+try {
+    var box1Link = document.getElementById("box1");
+    var box1ProductImage = document.getElementById("box1Img");
+    var box1ProductName = document.getElementById("box1Title");
+    var box1Stars = document.getElementById("box1Stars");
+    var box1Review = document.getElementById("box1Review");
+    var rei1 = document.getElementById("ri1");
+    var rei2 = document.getElementById("ri2");
+    var rei3 = document.getElementById("ri3");
+    var rei4 = document.getElementById("ri4");
+    var rei5 = document.getElementById("ri5");
+    var rei6 = document.getElementById("ri6");
 
-//these are the html divs vars for box2
-var box2Link = document.getElementById("box2");
-var box2ProductImage = document.getElementById("box2Img");
-var box2ProductName = document.getElementById("box2Title");
-var box2Stars = document.getElementById("box2Stars");
-var box2Review = document.getElementById("box2Review");
+    //these are the html divs vars for box2
+    var box2Link = document.getElementById("box2");
+    var box2ProductImage = document.getElementById("box2Img");
+    var box2ProductName = document.getElementById("box2Title");
+    var box2Stars = document.getElementById("box2Stars");
+    var box2Review = document.getElementById("box2Review");
 
-//these are the html divs vars for box3
-var box3Link = document.getElementById("box3");
-var box3ProductImage = document.getElementById("box3Img");
-var box3ProductName = document.getElementById("box3Title");
-var box3Stars = document.getElementById("box3Stars");
-var box3Review = document.getElementById("box3Review");
+    //these are the html divs vars for box3
+    var box3Link = document.getElementById("box3");
+    var box3ProductImage = document.getElementById("box3Img");
+    var box3ProductName = document.getElementById("box3Title");
+    var box3Stars = document.getElementById("box3Stars");
+    var box3Review = document.getElementById("box3Review");
 
-
+} catch (e) {
+    console.log(e);
+}
 
 
 var boxNum = 0;
 
 function reviewIndicatorTracker() {
-  
-  try{
 
-    if (boxNum == 0) {
-        console.log(boxNum);
-        rei1.style.fill = "#000";
-        rei2.style.fill = "e0e0e0";
-        rei3.style.fill = "e0e0e0";
-        rei4.style.fill = "e0e0e0";
-        rei5.style.fill = "e0e0e0";
-        rei6.style.fill = "e0e0e0";
-    } else if (boxNum == 1) {
-        rei1.style.fill = "#e0e0e0";
-        rei2.style.fill = "#000";
-        rei3.style.fill = "#e0e0e0";
-        rei4.style.fill = "#e0e0e0";
-        rei5.style.fill = "#e0e0e0";
-        rei6.style.fill = "#e0e0e0";
-    } else if (boxNum == 2) {
-        rei1.style.fill = "#e0e0e0";
-        rei2.style.fill = "#e0e0e0";
-        rei3.style.fill = "#000";
-        rei4.style.fill = "#e0e0e0";
-        rei5.style.fill = "#e0e0e0";
-        rei6.style.fill = "#e0e0e0";
-    } else if (boxNum == 3) {
-        rei1.style.fill = "#e0e0e0";
-        rei2.style.fill = "#e0e0e0";
-        rei3.style.fill = "#e0e0e0";
-        rei4.style.fill = "#000";
-        rei5.style.fill = "#e0e0e0";
-        rei6.style.fill = "#e0e0e0";
-    } else if (boxNum == 4) {
-        rei1.style.fill = "#e0e0e0";
-        rei2.style.fill = "#e0e0e0";
-        rei3.style.fill = "#e0e0e0";
-        rei4.style.fill = "#e0e0e0";
-        rei5.style.fill = "#000";
-        rei6.style.fill = "#e0e0e0";
-    } else if (boxNum == 5) {
-        rei1.style.fill = "#e0e0e0";
-        rei2.style.fill = "#e0e0e0";
-        rei3.style.fill = "#e0e0e0";
-        rei4.style.fill = "#e0e0e0";
-        rei5.style.fill = "#e0e0e0";
-        rei6.style.fill = "#000";
+    try {
+
+        if (boxNum == 0) {
+            console.log(boxNum);
+            rei1.style.fill = "#000";
+            rei2.style.fill = "e0e0e0";
+            rei3.style.fill = "e0e0e0";
+            rei4.style.fill = "e0e0e0";
+            rei5.style.fill = "e0e0e0";
+            rei6.style.fill = "e0e0e0";
+        } else if (boxNum == 1) {
+            rei1.style.fill = "#e0e0e0";
+            rei2.style.fill = "#000";
+            rei3.style.fill = "#e0e0e0";
+            rei4.style.fill = "#e0e0e0";
+            rei5.style.fill = "#e0e0e0";
+            rei6.style.fill = "#e0e0e0";
+        } else if (boxNum == 2) {
+            rei1.style.fill = "#e0e0e0";
+            rei2.style.fill = "#e0e0e0";
+            rei3.style.fill = "#000";
+            rei4.style.fill = "#e0e0e0";
+            rei5.style.fill = "#e0e0e0";
+            rei6.style.fill = "#e0e0e0";
+        } else if (boxNum == 3) {
+            rei1.style.fill = "#e0e0e0";
+            rei2.style.fill = "#e0e0e0";
+            rei3.style.fill = "#e0e0e0";
+            rei4.style.fill = "#000";
+            rei5.style.fill = "#e0e0e0";
+            rei6.style.fill = "#e0e0e0";
+        } else if (boxNum == 4) {
+            rei1.style.fill = "#e0e0e0";
+            rei2.style.fill = "#e0e0e0";
+            rei3.style.fill = "#e0e0e0";
+            rei4.style.fill = "#e0e0e0";
+            rei5.style.fill = "#000";
+            rei6.style.fill = "#e0e0e0";
+        } else if (boxNum == 5) {
+            rei1.style.fill = "#e0e0e0";
+            rei2.style.fill = "#e0e0e0";
+            rei3.style.fill = "#e0e0e0";
+            rei4.style.fill = "#e0e0e0";
+            rei5.style.fill = "#e0e0e0";
+            rei6.style.fill = "#000";
+        }
+    } catch (e) {
+        console.log(e);
     }
-  }
-  catch(e){
-    
-  }
 }
 
 
 
-try {
-    function boxPushMobile() {
+function boxPushMobile() {
+    try {
 
         if (boxNum >= link.length - 1) {
             boxNum = 0;
@@ -161,14 +163,15 @@ try {
         box1Stars.style = stars[boxNum];
         box1Stars.setAttribute('aria-label', starsAria[boxNum]);
         box1Review.innerHTML = review[boxNum];
-
+    } catch (e) {
+        console.log(e);
     }
-} catch (e) {
-    console.log(e);
+
 }
 
-try {
-    function boxPullMobile() {
+function boxPullMobile() {
+    try {
+
         if (boxNum <= 0) {
             boxNum = link.length - 1;
         } else {
@@ -183,16 +186,15 @@ try {
         box1Stars.setAttribute('aria-label', starsAria[boxNum]);
         box1Review.innerHTML = review[boxNum];
 
+    } catch (e) {
+        console.log(e);
     }
-} catch (e) {
-    console.log(e);
 }
 
 
 
-
-try {
-    function boxPush() {
+function boxPush() {
+    try {
 
         if (boxNum > 1) {
             boxNum = 0;
@@ -222,13 +224,14 @@ try {
         box3Stars.style = stars[boxNum + 2];
         box3Stars.setAttribute('aria-label', starsAria[boxNum + 2]);
         box3Review.innerHTML = review[boxNum + 2];
+    } catch (e) {
+        console.log(e);
     }
-} catch (e) {
-    console.log(e);
 }
 
-try {
-    function boxPull() {
+function boxPull() {
+    try {
+
         if (boxNum <= 0) {
             boxNum = link.length - 1;
             box1Link.href = link[boxNum - 2];
@@ -280,15 +283,17 @@ try {
                 box3Review.innerHTML = review[boxNum + 2];
             }
         }
+
+    } catch (e) {
+        console.log(e);
     }
-} catch (e) {
-    console.log(e);
 }
 
 
 
-try {
-    function boxLoad() {
+function boxLoad() {
+    try {
+
         box1Link.href = link[boxNum];
         box1ProductImage.innerHTML = `<img src='${prodImg[boxNum]}' id='GuideImg'>`;
         box1ProductName.innerHTML = ProductName[boxNum];
@@ -310,11 +315,10 @@ try {
         box3Stars.style = stars[boxNum + 2];
         box3Stars.setAttribute('aria-label', starsAria[boxNum + 2]);
         box3Review.innerHTML = review[boxNum + 2];
+    } catch (e) {
+        console.log(e);
     }
-} catch (e) {
-    console.log(e);
 }
-
 
 
 var box1 = document.getElementById("box1");
@@ -323,40 +327,37 @@ const swipeLimit = 100;
 let startX;
 
 const endTouch = e => {
-  try{
-    const finishingTouch = e.changedTouches[0].clientX;
-    if (startX < finishingTouch - swipeLimit) {
-        boxPullMobile();
-    } else if (startX > finishingTouch + swipeLimit) {
-        boxPushMobile();
-    }
-    box1.removeEventListener('touchmove', moveTouch);
-    box1.removeEventListener('touchend', endTouch);
-  }
-  catch(e){}
+    try {
+        const finishingTouch = e.changedTouches[0].clientX;
+        if (startX < finishingTouch - swipeLimit) {
+            boxPullMobile();
+        } else if (startX > finishingTouch + swipeLimit) {
+            boxPushMobile();
+        }
+        box1.removeEventListener('touchmove', moveTouch);
+        box1.removeEventListener('touchend', endTouch);
+    } catch (e) {}
 };
 const moveTouch = e => {
-try{
-    const progressX = startX - e.touches[0].clientX;
-    const translation = progressX > 0 ? parseInt(-Math.abs(progressX)) : parseInt(Math.abs(progressX));
-}
-  catch(e){}
+    try {
+        const progressX = startX - e.touches[0].clientX;
+        const translation = progressX > 0 ? parseInt(-Math.abs(progressX)) : parseInt(Math.abs(progressX));
+    } catch (e) {}
 };
 const startTouch = e => {
-  try{
-  
-    const {
-        touches
-    } =
-    e;
-    if (touches && touches.length === 1) {
-        const touch = touches[0];
-        startX = touch.clientX;
-        box1.addEventListener('touchmove', moveTouch);
-        box1.addEventListener('touchend', endTouch);
-    }
-  }
-  catch(e){}
+    try {
+
+        const {
+            touches
+        } =
+        e;
+        if (touches && touches.length === 1) {
+            const touch = touches[0];
+            startX = touch.clientX;
+            box1.addEventListener('touchmove', moveTouch);
+            box1.addEventListener('touchend', endTouch);
+        }
+    } catch (e) {}
 };
 
 box1.addEventListener('touchstart', startTouch);
