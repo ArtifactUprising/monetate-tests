@@ -1,12 +1,16 @@
-//CLP ADD TO FAVS FUNCTIONALITY ONLY RUNS ON CLP
+
+// vvvvv THIS IS THE ADD TO FAV FUNCTIONALITY  vvvv
 
 var yourFavList;
 
 //this runs at the start to iterate through all the cards on the page and add the html block with the <3
 setTimeout(function() {
-
+try{
   loadFavs();
-
+  }
+  catch(e){
+    console.log(e);
+  }
 
 
 }, 1000);
@@ -17,9 +21,13 @@ function loadPaginationStation() {
 
 
   setTimeout(function() {
-
+try{
     var paginationStation = document.getElementById("react-select-2-input");
     paginationStation.addEventListener("change", reloadOnPaginate);
+    }
+  catch(e){
+    console.log(e);
+  }
 
   }, 500);
 }
@@ -28,7 +36,7 @@ function loadPaginationStation() {
 
 paginationChange = document.querySelectorAll("[class*=singleValue]")[0];
 
-
+try{
 // create a new instance of `MutationObserver` named `observer`, 
 // passing it a callback function
 PaginationStationObserver = new MutationObserver(function(mutationsList, observer) {
@@ -39,7 +47,10 @@ PaginationStationObserver = new MutationObserver(function(mutationsList, observe
 // passing it the element to observe, and the options object
 PaginationStationObserver.observe(paginationChange, {attributes: true, childList: true, subtree: true, characterData:true});
 
-
+}
+catch(e){
+  console.log(e);
+}
 
 
 //this runs when pagination is triggered to iterate through all the cards on the page and add the html block with the <3
@@ -48,6 +59,8 @@ PaginationStationObserver.observe(paginationChange, {attributes: true, childList
 
 function reloadOnPaginate(){
 
+  
+  try{
   favHtml = '<div class="favs"><!-- card favs div --></div>';
   var cardElementList = document.querySelectorAll("[class*='ProductGrid__GridItem']");
   var favoritesList = JSON.parse(localStorage.getItem("yourFavList")) || [];
@@ -79,11 +92,16 @@ function reloadOnPaginate(){
     }
   });
   
+  }
+  catch(e){
+    console.log(e);
+  }
   
 }
   
   
 function loadFavs() {
+  try{
   favHtml = '<div class="favs"><!-- card favs div --></div>';
   var cardElementList = document.querySelectorAll("[class*='ProductGrid__GridItem']");
   var favoritesList = JSON.parse(localStorage.getItem("yourFavList")) || [];
@@ -103,11 +121,16 @@ function loadFavs() {
       el.firstChild.classList.remove('favorited');
     }
   });
+  }
+  catch(e){
+    console.log(e);
+  }
 }
 
 
 
 function reLoadFavs() {
+  try{
   favHtml = '<div class="favs"><!-- card favs div --></div>';
   var cardElementList = document.querySelectorAll("[class*='ProductGrid__GridItem']");
   var favoritesList = JSON.parse(localStorage.getItem("yourFavList")) || [];
@@ -122,11 +145,16 @@ function reLoadFavs() {
       el.firstChild.classList.remove('favorited');
     }
   });
+      }
+  catch(e){
+    console.log(e);
+  }
 }
 
 
 
 function addToFavs(){
+  try{
   //console.log("this in addToFas " + this.innerHTML);
   if(this.classList.contains("favorited")){
     
@@ -169,47 +197,62 @@ function addToFavs(){
   }
 
     reLoadFavs();
+      }
+  catch(e){
+    console.log(e);
+  }
 
 }
 
 
 
 function removeFav(link) {
+  try{
       var favoritesList = JSON.parse(localStorage.getItem("yourFavList"));
   
-	favoritesList = favoritesList.filter(fav=>fav.link!==link);
+  favoritesList = favoritesList.filter(fav=>fav.link!==link);
 
        localStorage.setItem('yourFavList', JSON.stringify(favoritesList));
   reLoadFavs();
+      }
+  catch(e){
+    console.log(e);
+  }
 
 }
 
-//END OF CLP FAVS
 
 
-//BUTTON FUNCTIONALY TO LIST FAVS 
+
+//  vvvvv   RUNS ON ALL HOLIDAY CARD PAGES CLPS AND PDPS vvvvv
 
 function populateFavs(){
-  
-var favoritesList = JSON.parse(localStorage.getItem("yourFavList")) || [];
-  
 
-var favsListDiv = document.getElementsByClassName("favsList")[0];
+  try{
+
+    var favoritesList = JSON.parse(localStorage.getItem("yourFavList")) || [];
+
+
+    var favsListDiv = document.getElementsByClassName("favsList")[0];
     favsListDiv.innerHTML = "";
- 
-    
-var c=0;
 
-for (i = 0; i < favoritesList.length; i++) {
-  el = favoritesList;
-var favTitle = el[i].title;
-  var favLink = el[i].link;
-  var newFav = document.createElement('div');
-  newFav.innerHTML = "<div class='favEl'>" +"<a target='_blank' class='favLink' href=" + favLink + ">" + favTitle + "</a></div>";                   // Insert text
-favsListDiv.appendChild(newFav);
 
-}
-  
+    var c=0;
+
+    for (i = 0; i < favoritesList.length; i++) {
+      el = favoritesList;
+      var favTitle = el[i].title;
+      var favLink = el[i].link;
+      var newFav = document.createElement('div');
+      newFav.innerHTML = "<div class='favEl'>" +"<a target='_blank' class='favLink' href=" + favLink + ">" + favTitle + "</a></div>";                   // Insert text
+      favsListDiv.appendChild(newFav);
+
+    }
+  }
+  catch(e){
+    console.log(e);
+  }
+
 }
 
 populateFavs();
@@ -220,58 +263,89 @@ var favsWrapper = document.getElementsByClassName('favsWrapper')[0];
 var favsShare = document.getElementsByClassName('favsShare')[0];
 
 function toggleFavActive(){
-  floater.classList.toggle("is-active");
-  floater__favs.classList.toggle("favs-is-active");
-  favsWrapper.classList.toggle("is-active");
-  favsShare.classList.toggle("is-active");
-  
+  try{
+    floater.classList.toggle("is-active");
+    floater__favs.classList.toggle("favs-is-active");
+    favsWrapper.classList.toggle("is-active");
+    favsShare.classList.toggle("is-active");
+  }
+  catch(e){
+    console.log(e);
+  }
+
 }
 
-  var runOnce = 0;
+
+
+
+//more of a toggle than remove
+function FavPulse(){
+  try{
+    console.log("does this get called? ");
+
+    if(localStorage.getItem('runOnce') == undefined || localStorage.getItem('runOnce') ==  null ){
+      console.log("we in if?");
+
+      localStorage.setItem('runOnce', 1);
+      var runOnce = localStorage.getItem('runOnce');
+      var floater = document.getElementsByClassName("floater__btn")[0];
+      floater.classList.toggle("pulseFav");
+      console.log("runOnce " + runOnce);
+
+    }
+
+  }
+  catch(e){console.log(e);}
+}
+
+FavPulse();
 
 function removeFavPulse(){
-  console.log("runOnce " + runOnce);
-  
-  var floater = document.getElementsByClassName("floater__btn")[0];
-  console.log("floater  " + floater);
+  try{
 
-  
-if(runOnce == 0){
-    console.log("ifstatement  ");
+    if(localStorage.getItem('runOnce')){
+      var floater = document.getElementsByClassName("floater__btn")[0];
+      floater.classList.toggle("pulseFav");
+      console.log("remove ");
 
-  floater.classList.toggle("pulseFav");
+    }
+  }
+  catch(e){
+    console.log(e);
+  }
+
 }
 
-  runOnce= 1;
-    console.log("runOnce after setting it to one  " + runOnce);
-
-  
-}
 
 function buildString(){
-      var email = 
-          to = " ",
-          subject = "My Favorite Cards from Artifact Uprising"
-          body = mailToFavs(),
-            //this is where we would need to find the a link we want to put the mailto link in
-          link = document.getElementById('link'),
-          message = ''
-      if (to){
-        email.className = 'not'
-        message = 'mailto:'+to
-        subject||body?message+='?':false
-        subject?message+='subject='+subject:false
-        subject&&body?message+='&body='+body:false
-        !subject&&body?message+='body='+body:false
-        //this is where we need to assign it to the ahref
-         // console.log("message - " + message);
+  try{
+    var email = 
+        to = " ",
+        subject = "My Favorite Cards from Artifact Uprising"
+    body = mailToFavs(),
+      //this is where we would need to find the a link we want to put the mailto link in
+      link = document.getElementById('link'),
+      message = ''
+    if (to){
+      email.className = 'not'
+      message = 'mailto:'+to
+      subject||body?message+='?':false
+      subject?message+='subject='+subject:false
+      subject&&body?message+='&body='+body:false
+      !subject&&body?message+='body='+body:false
+      //this is where we need to assign it to the ahref
+      // console.log("message - " + message);
 
-        window.open(message);
-      } else {
-        console.log("whoops");
-        email.focus()
-      }
+      window.open(message);
+    } else {
+      console.log("whoops");
+      email.focus()
     }
+  }
+  catch(e){
+    console.log(e);
+  }
+}
 
 
 
@@ -280,26 +354,29 @@ var linkArray = [];
 
 
 function mailToFavs(){
-  
-var favoritesList = JSON.parse(localStorage.getItem("yourFavList")) || [];
+  try{
 
-for (i = 0; i < favoritesList.length; i++) {
-  el = favoritesList;
-  
-var favTitle = el[i].title;
-  var favLink = el[i].link;
+    var favoritesList = JSON.parse(localStorage.getItem("yourFavList")) || [];
 
-var formattedBody = [favTitle + " - " + favLink + "\n"];
-  linkArray.push(formattedBody);
+    for (i = 0; i < favoritesList.length; i++) {
+      el = favoritesList;
+
+      var favTitle = el[i].title;
+      var favLink = el[i].link;
+
+      var formattedBody = [favTitle + " - " + favLink + "\n"];
+      linkArray.push(formattedBody);
+    }
+    var stinged = linkArray.join('');
+    return encodeURIComponent(stinged);
+  }
+  catch(e){
+    console.log(e);
+  }
 }
-  var stinged = linkArray.join('');
-  return encodeURIComponent(stinged);
-  
-}
 
-//END OF LISTING FAVS
+// vvvvvv ONLY RUNS ON PDPS vvvvvvvv
 
-//PDP ADD TO FAVS ONLY RUNS ON PDP PAGES
 
 function loadFavs() {
   try{
@@ -385,5 +462,3 @@ function removeFav(link) {
     console.log(e);
 }
 }
-
-//END OF PDP ADD TO FAVS
